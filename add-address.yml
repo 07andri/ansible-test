@@ -1,1 +1,9 @@
-/ip address add address=10.0.0.1/28 interface=lo0
+---
+- name: Tambah IP Address ke MikroTik
+  hosts: mikrotik
+  gather_facts: no
+  tasks:
+    - name: Tambah IP Address
+      community.routeros.command:
+        commands: 
+          - /ip address add address=10.0.0.1/28 interface=lo0
